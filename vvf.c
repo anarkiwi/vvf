@@ -80,23 +80,23 @@ void midiloop(void) {
   for (;;) {
     osc = GETMEM(0xd41b);
 
-    if (glitch & 0x1) {
+    if (glitch & GLITCH1) {
       GETMEM(0xd016) = osc;
     }
 
-    if (glitch & 0x2) {
+    if (glitch & GLITCH2) {
       GETMEM(0xd021) = osc;
     }
 
-    if (glitch & 0x4) {
+    if (glitch & GLITCH3) {
       GETMEM(0xd018) = osc;
     }
 
-    if (glitch & 0x8) {
+    if (glitch & GLITCH4) {
       GETMEM(0xd020) = osc;
     }
 
-    if (glitch & 0x16) {
+    if (glitch & GLITCH5) {
       osc |= 0x10; // avoid disabling screen.
       GETMEM(0xd011) = osc;
     }
