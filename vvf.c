@@ -72,7 +72,6 @@ void init(void) {
 
 void midiloop(void) {
   register unsigned char bc = 0;
-  register unsigned char b = 0;
   register unsigned char i = 0;
   register unsigned glitch = 0;
   register unsigned osc = 0;
@@ -192,7 +191,7 @@ void midiloop(void) {
   }
 }
 
-void main(void) {
+int main(void) {
   init();
   midiloop();
 }
